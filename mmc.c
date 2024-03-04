@@ -7,7 +7,7 @@ long mmc(int valor1, int valor2)
     
     for (i=1; i>0;i++)
     {
-        resto = ((long)valor1*i)%valor2;
+        resto = ((long)valor1 * i) % valor2;
         if (resto==0)
         {
             break;
