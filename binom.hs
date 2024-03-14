@@ -18,7 +18,7 @@ a lista de dentro  é para o Y e a lista de fora é para o X
 
 forte :: String -> Bool
 forte s = (length s >= 8 )
-    && or [isUpper c | c <- s ]
+    && or [isUpper c | c <- s]
     && or [isLower c | c <- s]
     && or [isDigit c | c <- s]
 
@@ -42,4 +42,14 @@ myconcat (x:xs) = x ++ myconcat xs
 myreplicate :: Int -> a -> [a]
 myreplicate 0 x = []
 myreplicate n x = x : myreplicate (n-1) x
+
+
+myindex :: [a] -> Int -> a
+myindex (x:xs) 0 = x
+myindex (x:xs) n = myindex xs (n-1)
+
+myelem :: Eq a => a -> [a] ->Bool
+myelem y (x:xs) | x == y    = True
+                | otherwise = myelem y (xs) 
+
 
